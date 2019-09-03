@@ -1,5 +1,5 @@
 
-import FluentSQLite
+import FluentMySQL
 import Vapor
 
 final class Category: Codable {
@@ -10,7 +10,7 @@ final class Category: Codable {
         self.name = name
     }
 }
-extension Category: SQLiteModel {}
+extension Category: MySQLModel {}
 
 extension Category: Content {}
 extension Category: Migration {}
