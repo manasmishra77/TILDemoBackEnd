@@ -1,0 +1,23 @@
+#set("content") {
+  <h1>All Users</h1>
+
+  #if(count(users) > 0) {
+    <table class="table table-bordered table-hover">
+      <thead class="thread-light">
+        <tr>
+          <th>Name</th><th>User Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        #for(user in users) {
+          <tr>
+            <td><a href="/user/#(user.id)">#(user.name)</a></td><td>#(user.userName)</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  } else {
+    <h2>There aren't any acronyms!!</h2>
+  }
+}
+#embed("base")

@@ -1,0 +1,24 @@
+
+#set("content") {
+  <h1>All Categories</h1>
+
+  #if(count(categories) > 0) {
+    <table class="table table-bordered table-hover">
+      <thead class="thread-light">
+        <tr>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        #for(category in categories) {
+          <tr>
+            <td><a href="/category/#(category.id)">#(category.name)</a></td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  } else {
+    <h2>There aren't any categories!!</h2>
+  }
+}
+#embed("base")
