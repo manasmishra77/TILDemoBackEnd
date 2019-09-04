@@ -19,3 +19,9 @@ extension UserModel: MySQLUUIDModel {}
 extension UserModel: Content {}
 extension UserModel: Migration {}
 extension UserModel: Parameter {}
+
+extension UserModel {
+    var acronyms: Children<UserModel, Acronym> {
+        return children(\.userID)
+    }
+}
